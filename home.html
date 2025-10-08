@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Thunder's Diner</title>
+  <style>
+    :root {
+      --creamy-white: #FEFAE0;
+      --deep-teal: #264653;
+      --soft-yellow: #E9C46A;
+      --muted-green: #2A9D8F;
+      --radius: 10px;
+      --shadow: 0 4px 14px rgba(38,70,83,0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background-color: var(--creamy-white);
+      color: var(--deep-teal);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: var(--deep-teal);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      box-shadow: var(--shadow);
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--soft-yellow);
+    }
+
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    button, .btn {
+      background-color: var(--soft-yellow);
+      color: var(--deep-teal);
+      border: none;
+      border-radius: var(--radius);
+      padding: 10px 18px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 30px;
+      display: inline-block;
+    }
+
+    button:hover, .btn:hover {
+      background-color: var(--muted-green);
+      color: white;
+    }
+
+    footer {
+      background-color: var(--muted-green);
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: auto;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background-color: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    img {
+      width: 80%;
+      height: auto;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      margin-bottom: 15px;
+    }
+
+    .hero {
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Hide sections by default except home */
+    section {
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Thunder's Diner</h1>
+    <nav>
+      <a href="#" onclick="showSection('home')">Home</a>
+      <a href="#" onclick="showSection('menu')">Menu</a>
+      <a href="#" onclick="showSection('contact')">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME SECTION -->
+    <section id="home" class="active">
+      <div class="hero">
+        <img src="c:\Users\j4red\Desktop\jaja.jpg" alt="Photo of the store">
+      </div>
+      <h2>Welcome to Thunder's Diner</h2>
+      <p>Enjoy delicious meals made fresh every day. Explore our menu and discover your favorites!</p>
+      <a href="#" class="btn" onclick="showSection('menu')">View Menu</a>
+    </section>
+
+    <!-- MENU SECTION -->
+    <section id="menu">
+      <h2>Our Menu</h2>
+
+      <div class="card">
+        <img src="c:\Users\j4red\Desktop\images.webp" alt="Adobo">
+        <h3>Adobo</h3>
+        <p>Adobo is a classic Filipino dish made with tender chicken simmered in soy sauce, vinegar, and spices for a rich savory flavor.</p>
+        <button>Order Now</button>
+      </div>
+
+      <div class="card">
+        <img src="c:\Users\j4red\Desktop\download.jpg" alt="Bicol Express">
+        <h3>Bicol Express</h3>
+        <p>A spicy Filipino dish made with pork cooked in coconut milk, chili, and shrimp paste for a rich and fiery flavor.</p>
+        <button>Order Now</button>
+      </div>
+
+      <div class="card">
+        <img src="c:\Users\j4red\Desktop\images.webp" alt="Sisig">
+        <h3>Sisig</h3>
+        <p>A sizzling Filipino favorite made from chopped pork, onion, and chili, served hot and bursting with savory goodness.</p>
+        <button>Order Now</button>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>We’d love to hear from you! Reach out to us for inquiries or feedback.</p>
+
+      <div class="hero">
+        <img src="c:\Users\j4red\Desktop\6b48aede-7031-4cf7-8264-72014b3550f1.jpg" alt="Our Store Location" style="width:80%;height:auto;">
+      </div>
+
+      <form style="max-width:400px;margin:20px auto;text-align:left;">
+        <label for="name">Name</label><br>
+        <input id="name" name="name" type="text" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;margin:6px 0;"><br>
+
+        <label for="email">Email</label><br>
+        <input id="email" name="email" type="email" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;margin:6px 0;"><br>
+
+        <label for="message">Message</label><br>
+        <textarea id="message" name="message" rows="5" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;margin:6px 0;"></textarea><br>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Thunder's Diner | Designed with creamy white, deep teal, soft yellow & muted green
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
